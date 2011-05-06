@@ -10,8 +10,9 @@ ADMINS = (('Your admin name', 'admin@example.com'),)
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
-        'NAME': os.path.join(PROJECT_ROOT, 'geoplay_development.db'),
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', 
+        'NAME': 'geodjango',
+		'USER': 'cgilmer',
     }
 }
 
@@ -30,14 +31,14 @@ FIXTURE_DIRS = ()
 # A tuple of strings designating all the enabled applications
 INSTALLED_APPS = (
     'django.contrib.admin',
-    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.messages',
+	'django.contrib.gis',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'initial_data', # load django-admin commands, initial fixtures, ..
+	'world',
 )
 
 # The language code for this installation
