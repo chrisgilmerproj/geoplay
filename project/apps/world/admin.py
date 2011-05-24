@@ -9,6 +9,5 @@ GMAP = GoogleMap(key=settings.GOOGLE_MAPS_API_KEY)
 class WorldBordersAdmin(admin.OSMGeoAdmin):
 	extra_js     = [GMAP.api_url + GMAP.key]
 	map_template = 'gis/admin/google.html'
-	modifiable   = True
 
 admin.site.register(WorldBorders, WorldBordersAdmin)
