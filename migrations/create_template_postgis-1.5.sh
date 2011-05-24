@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Set the postgis sql path
-#POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib/postgis-1.5
-POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib
+POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib/postgis-1.5
+#POSTGIS_SQL_PATH=`pg_config --sharedir`/contrib
 
 # Create the template spatial database.
 createdb -E UTF8 template_postgis # Create the template spatial database.
