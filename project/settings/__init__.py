@@ -1,4 +1,4 @@
-import os.path
+import os
 import sys
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
@@ -12,7 +12,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', 
         'NAME': 'geodjango',
-		'USER': 'cgilmer',
+		'USER': 'postgres',
     }
 }
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'initial_data', # load django-admin commands, initial fixtures, ..
+	'waypoints',
 	'world',
 )
 

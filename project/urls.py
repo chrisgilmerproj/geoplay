@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 	(r'^admin/', include(admin.site.urls)),
 	# Homepage
 	(r'^$', TemplateView.as_view(template_name='homepage.html')),
+	(r'^waypoints/', include('waypoints.urls')),
 )
 
 # Static URLs
