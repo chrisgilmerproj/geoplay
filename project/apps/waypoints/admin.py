@@ -6,18 +6,18 @@ from django.contrib.gis.maps.google import GoogleMap
 from waypoints.forms import WaypointAdminForm
 from waypoints.models import Waypoint
 
-GMAP = GoogleMap(key=settings.GOOGLE_MAPS_API_KEY)
+GMAP = GoogleMap()
 
-class WaypointAdmin(admin.OSMGeoAdmin):
+class WaypointAdmin(admin.GeoModelAdmin):
 	# Set a default location
-	pnt = Point(-99.263813,19.370405, srid=4326)
-	pnt.transform(900913)
+	pnt = Point(-98.3,39.5, srid=4326)
+	#pnt.transform(3857) #fallback (900913) # Use with OSMModelAdmin
 
+	debug        = True
 	default_lon, default_lat = pnt.coords	
-	default_zoom = 4
-	extra_js     = [GMAP.api_url + GMAP.key]
-	form         = WaypointAdminForm
+	#extra_js     = [GMAP.api_url + GMAP.key]
+	#form         = WaypointAdminForm
 	list_display = ('name','geometry')
-	map_template = 'gis/admin/google.html'
+	#map_template = 'gis/admin/google.html'
 
 admin.site.register(Waypoint, WaypointAdmin)

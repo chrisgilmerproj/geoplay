@@ -20,7 +20,7 @@ if (!wkt) {
                 position.coords.longitude, position.coords.latitude
                 ).transform(
                     new OpenLayers.Projection("EPSG:4326"),
-                    new OpenLayers.Projection("EPSG:900913")
+                    new OpenLayers.Projection("EPSG:4326")
                 ), zoomLevel);
         }, function() {
             // Location could not be found (probably denied by user)
